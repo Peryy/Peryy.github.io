@@ -103,7 +103,8 @@ width: 100%;
  }
  
 .social li{
-display: inline-block}
+display: inline-block
+background-color:#fff;}
 
 /* Intro */
 .intro {
