@@ -43,6 +43,11 @@ a {
 .row{
     background-color: #fff;
 }
+.navbar{
+margin: -15px;
+padding:0  15px;
+background: #fff;}
+
 .navbar-header{
 margin: -15px;
 padding:0  15px;
