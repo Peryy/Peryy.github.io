@@ -40,7 +40,9 @@ a {
 }
 
 /* Navigation */
-
+.row{
+    background-color: #fff;
+}
 .navbar-header{
 margin: -15px;
 padding:0  15px;
