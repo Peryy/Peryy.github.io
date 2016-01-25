@@ -2105,6 +2105,7 @@ div.row2 {
   }
   .col-lg-12 {
     width: 100%;
+    padding:0  15px;
   }
   .col-lg-11 {
     width: 91.66666667%;
