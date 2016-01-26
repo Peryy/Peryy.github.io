@@ -2,6 +2,34 @@ html {
     background:#f4f4f4
 }
 
+.thumbnail {
+  display: block;
+  padding: 4px;
+  margin-bottom: 21px;
+  line-height: 1.42857143;
+  background-color: #ffffff;
+  border: 1px solid #ecf0f1;
+  border-radius: 4px;
+  -webkit-transition: border 0.2s ease-in-out;
+  -o-transition: border 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out;
+}
+.thumbnail > img,
+.thumbnail a > img {
+  margin-left: auto;
+  margin-right: auto;
+}
+a.thumbnail:hover,
+a.thumbnail:focus,
+a.thumbnail.active {
+  border-color: #18bc9c;
+}
+.thumbnail .caption {
+  padding: 9px;
+  color: #2c3e50;
+}
+
+
 .row > div,.container {
     transition:all .25s ease-in-out;
     -moz-transition:all .25s ease-in-out;
