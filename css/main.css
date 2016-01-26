@@ -71,10 +71,6 @@ width: 100%;
     color:#44454b
 }
 
-.navbar-brand:hover {
-    color:#1eadef;
-    border-color:#1eadef
-}
 
 .social li a {
     padding-right:0
