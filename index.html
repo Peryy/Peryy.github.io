@@ -36,9 +36,11 @@ $(document).ready(function()
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     
-    <title>Portfolio Theme by gsvineeth.com </title>
+    <title>Hello</title>
     
-    <!-- Bootstrap + Font Awesome + Main CSS -->
+    <!-- Bootstrap + Font Awesome + Main CSS 
+Portfolio Theme by gsvineeth.com 
+-->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
      <link href="css/freelancer.css" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -62,7 +64,7 @@ $(document).ready(function()
                 <div class="row">
                     <div class="navbar">
                         <div class="navbar-header">
-                            <button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button><p class="navbar-brand" >Rachel</p>
+                            <button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button><p class="navbar-brand">RACHEL</p>
                         </div>
 
                         <div class="collapse navbar-collapse">
@@ -184,6 +186,31 @@ $(document).ready(function()
                             to right and then top to bottom.</p>
 
             <p> My program divides the canvas into a grid and iterates through each tile of the grid, randomly drawing a line orientated one of two ways: a line from the lower left to the upper right, or a line from the upper left to the lower right. It continues placing a line in each tile until the screen is filled.</p>
+            <p><pre>int offset = 10;
+
+void setup() {
+  size(500, 500);
+  background(233, 220, 188);
+  noLoop();
+
+}
+
+void draw() {
+  for (int i=0; i&lt;width; i=i+offset) {
+    for (int j=0; j&lt;height; j=j+offset) {
+      int r =(int)random(0, 2);
+      if (r==0) {
+        line(i, j, i+offset, j+offset);
+      } else {
+        line(i, j+offset, i+offset, j);
+      }
+    }
+  }
+}
+void keyReleased() {
+  if (key == 's' || key == 'S') saveFrame("##.png");
+}
+</pre></p>
             <div class="row">
   <div class="col-md-12">
      <a class="thumbnail" href="images/maze/2.png"> <img src="images/maze/2.png" class="thumbnail" alt=""></a> 
