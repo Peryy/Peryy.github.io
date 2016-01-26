@@ -217,7 +217,7 @@ $(document).ready(function()
             </div>
         </div>
     </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -229,10 +229,83 @@ $(document).ready(function()
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
+                            <h2>Mandala Generator</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <img src="images/1.png" class="img-responsive img-centered" alt=""  height="200" width="200">
+                            <p><pre>color [] colarray = { color(6, 36, 77), color(15, 55, 109), 
+  color(44, 84, 138), color(93, 123, 164), color(136, 163, 199) };
+int counter = 0;
+PVector center;
+PGraphics off;
+int shapes = 25;
+int alpha =200;
+float weight=16;
+
+void setup()
+{
+  size(1000, 1000);
+  blendMode(DIFFERENCE);   
+  stroke(0);
+  randomSeed(0);
+  center = new PVector(width/2, height/2);
+  noFill();
+  smooth();
+  ellipseMode(CENTER);
+  rectMode(CENTER);
+  off = createGraphics(width, height);
+  for (int i=0; i&lt;18; i++) {
+    drawCenteredShape(1);
+  }
+}
+
+void draw()
+{
+  noFill();
+  image(off, 0, 0, width, height);
+}
+
+
+void drawCenteredShape(int type)
+{
+  float x = random(1, center.x*2-30);
+  float y = random(1, center.y*2-30);
+  switch(type)
+  {
+  case 1:
+    off.beginDraw();
+    off.strokeWeight(random(1, weight));
+    off.noFill();
+    int yy=colarray[counter];
+    off.stroke(yy);
+
+    off.ellipse(center.x, center.y, x, y);
+    off.ellipse(center.x, center.y, y, x);
+
+    off.pushMatrix();
+    off.translate(center.x, center.y);
+    off.rotate(radians(45));
+    off.ellipse(0, 0, x, y);
+    off.popMatrix();
+
+    off.pushMatrix();
+    off.translate(center.x, center.y);
+    off.rotate(radians(-45));
+    off.ellipse(0, 0, x, y);
+    off.popMatrix();
+    off.endDraw();
+    break;
+  }
+  weight--;
+  counter = (counter + 1) % colarray.length;
+}
+
+
+
+void keyPressed()
+{    
+  saveFrame("line-######.png");
+}
+                            </pre></p>
                             <ul class="list-inline item-details">
                                 <li>Client:
                                     <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
