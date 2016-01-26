@@ -332,7 +332,55 @@ void keyPressed()
                            <h2>Rose Curves</h2>
                             <hr class="star-primary">
                             <img src="images/rose1.png" class="img-responsive img-centered" alt="" height=50% width=50% >
-                            <p>This sketche draws rose curves</p>
+                            <p>This sketch draws rose curves
+                                <pre>
+
+float r =5/6.0;
+float rad =100;
+float i2=0;
+float s=250;
+float sw=1;
+float a =150;
+void setup()
+{
+
+  size(800, 800);
+  noLoop();
+}
+
+void draw() {
+  background(255);
+  translate(width/2, height/2);
+  strokeWeight(4);
+  roseCurve(7/5.0, 0);
+}
+
+void roseCurve(float k, float s) {
+  beginShape();
+  for (float i = 0; i &lt;361; i+=1)
+  {
+    fill(150, 150);
+
+    float x = 350*cos(k*i) * sin(i);
+    float y = 350*cos(k*i) * cos(i); 
+    float x2 = 350*cos(k*i2) * sin(i2);
+    float y2 =  350*cos(k*i2) * cos(i2); 
+
+    strokeWeight(0.5);
+    line(x, y, x2, y2);
+    i2=i;
+
+    ellipse(x, y, 10, 10);
+
+    s=s-0.05;
+    sw=sw+0.0005;
+  }
+  endShape();
+}
+void keyReleased() {
+  if (key == 's' || key == 'S') saveFrame("17.png");
+}
+                                </pre></p>
                              </p> <a href="images/rose/1.png" target="_blank"><img src="images/rose/1.png"  height=50% width=50% ></a> </p>
                            </p> <a href="images/rose/2.png" target="_blank"><img src="images/rose/2.png"  height=50% width=50% ></a> </p>
                                </p> <a href="images/rose/3.png" target="_blank"><img src="images/rose/3.png"  height=50% width=50% ></a> </p>
@@ -472,19 +520,36 @@ void keyPressed()
     </div>
 
     <footer>
-        <div class="container">     
+      <div class="container">
+            <nav class="nav-footer">
+              <!--  <ul>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Blog</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Resume</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>-->
 
                                   <ul>
-                    
-                      
+                                      
                                       <li><a href="#"> <i class="fa fa-github"></i> </a> </li>  
-                             
+                                      
                                       <li><a href="#"> <i class="fa fa-envelope"></i> </a></li>
                                   </ul>
 
                 <p class="credits text-center">&copy; All Rights Reserved 2015</p>
             </nav>
-        </div>
+        </div>-
 
     </footer>
 </body>
