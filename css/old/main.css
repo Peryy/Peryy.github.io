@@ -113,10 +113,9 @@ background-color:#fff;}
 
 /* Intro */
 .intro {
-    margin:0 0 15em;
+    margin:0 0 0em;
     font-size:1.8em;
     line-height:1.6em
-    color:#44454b
 }
 
 .intro span {
