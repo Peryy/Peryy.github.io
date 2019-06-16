@@ -10,6 +10,7 @@ twitter.com/gsvineeth
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
       <script src="js/jribbble.js"></script>
       <script src="js/bootstrap.js"></script>
+       <script src="js/processing.js"></script>
 <script>
 
 $(document).ready(function()
@@ -182,6 +183,7 @@ Portfolio Theme by gsvineeth.com
                         <div class="modal-body">
                             <h2>Random Maze Generator</h2>
                             <hr class="star-primary">
+                            <canvas data-processing-sources="maze_inspired_by_10_print.pde"></canvas>
                             <img src="images/maze/1.png" class="img-responsive img-centered" alt="">
                             <p>This sketch generates a random maze each time it is run. It is inspired by the book <a href="http://10print.org">10 Print</a>, an analysis of a one-line Commodore 64 BASIC program.<b> 10 PRINT CHR$(205.5+RND(1)); : GOTO 10</b>. When this code is run, the program randomly returns either the "/" or the "\" character. The characters are printed to the screen one at a time, left 
                             to right and then top to bottom.</p>
