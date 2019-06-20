@@ -146,7 +146,7 @@ Portfolio Theme by gsvineeth.com
                                 
                             </div>
                         </div>
-                        <img src="images/rose1.png" class="img-responsive" alt="">
+                        <img src="images/audiovis/2.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 </div>
@@ -485,40 +485,62 @@ void keyReleased() {
                             <canvas data-processing-sources="audio_points.pde"></canvas>
                             <h6>Click the maze to randomly generate a new maze!</h6>
                             
-                            <p>This sketch generates a random maze each time it is run. It is inspired by the book <a href="http://10print.org">10 Print</a>, an analysis of a one-line Commodore 64 BASIC program.<b> 10 PRINT CHR$(205.5+RND(1)); : GOTO 10</b>. When this code is run, the program randomly returns either the "/" or the "\" character. The characters are printed to the screen one at a time, left 
-                            to right and then top to bottom.</p>
+                            <p>This sketch draws points in a circle on the center of the canvas and uses input from the mic to determine their distance from the center</p>
 
-            <p> My program divides the canvas into a grid and iterates through each tile of the grid, randomly drawing a line orientated one of two ways: a line from the lower left to the upper right, or a line from the upper left to the lower right. It continues placing a line in each tile until the screen is filled.</p>
-            <p><pre>int offset = 10;
+            <p><pre>import ddf.minim.*;
+import ddf.minim.analysis.*;
+private Minim minim;
+private AudioInput input;
+BeatDetect beat;
+int r = 200;
+float rad =200;
 
 void setup() {
-  size(500, 500);
-  background(233, 220, 188);
-  noLoop();
-
+  size(600, 600);
+  frameRate(60);
+  this.minim = new Minim(this);
+  input = minim.getLineIn(minim.STEREO, 2048);
+  beat = new BeatDetect();
 }
 
 void draw() {
-  for (int i=0; i&lt;width; i=i+offset) { 
-    for (int j=0; j&lt;height; j=j+offset) { 
-    //these for loops divide the canvas into a grid of tiles
-      int r =(int)random(0, 2);
-      if (r==0) { 
-      //this if statement randomly draws a diagonal line from top left to bottom right OR from bottom left to top right
-        line(i, j, i+offset, j+offset); 
-      } else {
-        line(i, j+offset, i+offset, j);
-      }
-    }
+  noStroke();
+  fill(0, 0, 0, 5); 
+  rect(0, 0, width, height);
+  stroke(250);
+  beat.detect(input.mix);
+  int bsize = input.bufferSize();
+
+  // Draw points in music player
+  float x1, y1;
+
+  //CENTER POINTS
+  for (int i = 0; i < bsize - 1; i+=4) {
+    x1 = width / 2 + cos(i) * rad * input.left.get(i) *20;
+    y1 = height / 2 + sin(i) * rad * input.right.get(i) *20;
+    point(x1, y1);
   }
 }
+
 void keyReleased() {
-  if (key == 's' || key == 'S') saveFrame("##.png");
+  if (key == 's' || key == 'S') {
+    String stamp = timestamp("Project", ".png");
+    println(stamp);
+    String path = dataPath(stamp);
+    println(path);
+    saveFrame(path);
+  }
 }
+
+static final String timestamp(final String name, final String ext) {
+  return name + "-" + year() + nf(month(), 2) + nf(day(), 2) +
+    "-" + nf(hour(), 2) + nf(minute(), 2) + nf(second(), 2) + ext;
+}
+
 </pre></p>
             <div class="row">
   <div class="col-md-12">
-    <img src="images/audiovis/1.png" class="img-responsive img-centered" alt="">
+   
      <a class="thumbnail" href="images/audiovis/1.png"> <img src="images/audiovis/1.png" class="thumbnail" alt=""></a> 
   
   </div></div>
