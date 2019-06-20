@@ -120,7 +120,7 @@ Portfolio Theme by gsvineeth.com
                                
                             </div>
                         </div>
-                        <img src="images/1.png" class="img-responsive" alt="">
+                        <img src="images/1.png" class="img-responsive" alt="hhhhh">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -134,15 +134,15 @@ Portfolio Theme by gsvineeth.com
                         <img src="images/rose1.png" class="img-responsive" alt="">
                     </a>
                 </div>
-             <div class="row">
+                    <div class="row">
                   <div class="col-sm-4 portfolio-item">
                    
                 </div>
                   <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
-                                <p>Rose Curve</p>
+                                <p>Audio Visualizer</p>
                                 
                             </div>
                         </div>
@@ -201,7 +201,7 @@ Portfolio Theme by gsvineeth.com
                             <h2>Random Maze Generator</h2>
                             <hr class="star-primary">
                             <canvas data-processing-sources="maze_inspired_by_10_print.pde"></canvas>
-                            <h6>Click the maze to randomly generate a new maze!</h6>
+                            <h6>Click the maze to randomly generated a new maze!</h6>
                             
                             <p>This sketch generates a random maze each time it is run. It is inspired by the book <a href="http://10print.org">10 Print</a>, an analysis of a one-line Commodore 64 BASIC program.<b> 10 PRINT CHR$(205.5+RND(1)); : GOTO 10</b>. When this code is run, the program randomly returns either the "/" or the "\" character. The characters are printed to the screen one at a time, left 
                             to right and then top to bottom.</p>
@@ -217,13 +217,11 @@ void setup() {
 }
 
 void draw() {
-  for (int i=0; i&lt;width; i=i+offset) { 
-    for (int j=0; j&lt;height; j=j+offset) { 
-    //these for loops divide the canvas into a grid of tiles
+  for (int i=0; i&lt;width; i=i+offset) {
+    for (int j=0; j&lt;height; j=j+offset) {
       int r =(int)random(0, 2);
-      if (r==0) { 
-      //this if statement randomly draws a diagonal line from top left to bottom right OR from bottom left to top right
-        line(i, j, i+offset, j+offset); 
+      if (r==0) {
+        line(i, j, i+offset, j+offset);
       } else {
         line(i, j+offset, i+offset, j);
       }
@@ -469,7 +467,80 @@ void keyReleased() {
             </div>
         </div>
     </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+
+ <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Audio Visualiser</h2>
+                            <hr class="star-primary">
+                            <canvas data-processing-sources="audio_points.pde"></canvas>
+                            <h6>Click the maze to randomly generate a new maze!</h6>
+                            
+                            <p>This sketch generates a random maze each time it is run. It is inspired by the book <a href="http://10print.org">10 Print</a>, an analysis of a one-line Commodore 64 BASIC program.<b> 10 PRINT CHR$(205.5+RND(1)); : GOTO 10</b>. When this code is run, the program randomly returns either the "/" or the "\" character. The characters are printed to the screen one at a time, left 
+                            to right and then top to bottom.</p>
+
+            <p> My program divides the canvas into a grid and iterates through each tile of the grid, randomly drawing a line orientated one of two ways: a line from the lower left to the upper right, or a line from the upper left to the lower right. It continues placing a line in each tile until the screen is filled.</p>
+            <p><pre>int offset = 10;
+
+void setup() {
+  size(500, 500);
+  background(233, 220, 188);
+  noLoop();
+
+}
+
+void draw() {
+  for (int i=0; i&lt;width; i=i+offset) { 
+    for (int j=0; j&lt;height; j=j+offset) { 
+    //these for loops divide the canvas into a grid of tiles
+      int r =(int)random(0, 2);
+      if (r==0) { 
+      //this if statement randomly draws a diagonal line from top left to bottom right OR from bottom left to top right
+        line(i, j, i+offset, j+offset); 
+      } else {
+        line(i, j+offset, i+offset, j);
+      }
+    }
+  }
+}
+void keyReleased() {
+  if (key == 's' || key == 'S') saveFrame("##.png");
+}
+</pre></p>
+            <div class="row">
+  <div class="col-md-12">
+    <img src="images/audiovis/1.png" class="img-responsive img-centered" alt="">
+     <a class="thumbnail" href="images/audiovis/1.png"> <img src="images/audiovis/1.png" class="thumbnail" alt=""></a> 
+  
+  </div></div>
+  <div class="row">
+   <div class="col-md-12">
+
+    <a class="thumbnail" href="images/audiovis/2.png"> <img src="images/audiovis/2.png" class="thumbnail" alt=""></a> 
+  
+  </div>
+</div>
+                            
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--END OF PORTFOLIO MODAL 4-->
+
+    <div class="portfolio-modal modal fade" id="portfolioModal44" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
